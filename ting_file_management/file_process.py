@@ -18,11 +18,16 @@ def process(path_file: str, instance: Queue):
     print(queue_item, file=sys.stdout)
 
 
-process("statics/nome_pedro.txt", Queue())
+def remove(instance: Queue):
+    if not len(instance._queue):
+        return print("Não há elementos", file=sys.stdout)
 
-
-def remove(instance):
-    """Aqui irá sua implementação"""
+    removed = instance.dequeue()
+    if removed:
+        print(
+            f"Arquivo {removed['nome_do_arquivo']} removido com sucesso",
+            file=sys.stdout,
+        )
 
 
 def file_metadata(instance, position):

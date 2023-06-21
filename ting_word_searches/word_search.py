@@ -1,6 +1,4 @@
 from ting_file_management.queue import Queue
-from ting_file_management.file_management import txt_importer
-from ting_file_management.file_process import process
 
 
 def exists_word(word: str, instance: Queue):
@@ -22,14 +20,6 @@ def exists_word(word: str, instance: Queue):
                         occurrence["ocorrencias"][0]
                     )
     return list(occurrences.values())
-
-
-q = Queue()
-process("statics/nome_pedro.txt", q)
-
-print("aaaaaaaaaa", q._queue)
-
-print("bbbbbbbbbb", exists_word("pedro", q))
 
 
 def search_by_word(word, instance):
